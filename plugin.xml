@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" 
-    xmlns:android="http://schemas.android.com/apk/res/android" id="fairmanager-cordova-plugin-mediascanner" version="1.0.0">
-    <name>MediaScanner</name>
-    <description>MediaScanner should be called to add a downloaded image to Android Gallery.</description>
-    <license>MIT</license>
-    <repo>https://github.com/fairmanager-cordova/plugin-mediascanner</repo>
-    <issue>https://github.com/fairmanager-cordova/plugin-mediascanner/issues</issue>
-    <author>Bruno E. Grossi - brunogrossi.com.br</author>
-    <keywords>android,image,photo library,gallery,mediascanner</keywords>
+<plugin id="fairmanager-cordova-plugin-mediascanner" version="1.0.0"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0">
 
-    <engine>
-        <engine name="cordova" version=">=3.0.0" />
-    </engine>
+	<name>MediaScanner Plugin</name>
+	<description>MediaScanner should be called to add a downloaded image to Android Gallery.</description>
+	<license>MIT</license>
+	<author>Bruno E. Grossi - brunogrossi.com.br</author>
+	<keywords>android,image,photo library,gallery,mediascanner</keywords>
 
-    <js-module src="www/MediaScanner.js" name="MediaScanner">
-        <clobbers target="cordova.plugins.mediaScanner" />
-    </js-module>
+	<repo>https://github.com/fairmanager-cordova/plugin-mediascanner</repo>
+	<issue>https://github.com/fairmanager-cordova/plugin-mediascanner/issues</issue>
 
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="MediaScanner">
-                <param name="ios-package" value="CDVMediaScanner"/>
-            </feature>
-        </config-file>
+	<engine>
+		<engine name="cordova" version=">=8.0.0"/>
+		<engine name="cordova-android" version=">=7.1.1"/>
+		<engine name="cordova-ios" version=">=4.5.5"/>
+	</engine>
 
-        <source-file src="src/ios/MediaScanner.mm" />
-    </platform>
+	<js-module src="www/mediascanner.js" name="MediaScanner">
+		<clobbers target="cordova.plugins.MediaScanner" />
+	</js-module>
 
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="MediaScanner">
-                <param name="android-package" value="br.com.brunogrossi.MediaScanner.MediaScanner"/>
-            </feature>
-        </config-file>
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="MediaScanner">
+				<param name="android-package" value="eu.fairmanager.plugins.MediaScanner"/>
+			</feature>
+		</config-file>
 
-        <source-file src="src/android/MediaScanner.java" target-dir="src/br/com/brunogrossi/MediaScanner" />
-    </platform>
+		<source-file src="src/android/eu/fairmanager/plugins/mediascanner/MediaScanner.java" target-dir="src/eu/fairmanager/plugins/mediascanner/" />
+	</platform>
+
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="MediaScanner">
+				<param name="ios-package" value="CDVMediaScanner"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/ios/CDVMediaScanner.m" />
+	</platform>
 </plugin>

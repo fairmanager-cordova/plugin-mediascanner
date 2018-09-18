@@ -2,16 +2,10 @@
   "name": "fairmanager-cordova-plugin-mediascanner",
   "version": "1.0.0",
   "description": "MediaScanner should be called to add a downloaded image to Android Gallery.",
-  "cordova": {
-    "id": "fairmanager-cordova-plugin-mediascanner",
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fairmanager-cordova/plugin-mediascanner.git"
+  "license": "MIT",
+  "author": {
+    "name": "Bruno E. Grossi",
+    "url": "http://brunogrossi.com.br"
   },
   "keywords": [
     "android",
@@ -22,13 +16,26 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": {
-    "name": "Bruno E. Grossi",
-    "url": "http://brunogrossi.com.br"
+  "homepage": "https://github.com/fairmanager-cordova/plugin-mediascanner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fairmanager-cordova/plugin-mediascanner.git"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fairmanager-cordova/plugin-mediascanner/issues"
   },
-  "homepage": "https://github.com/fairmanager-cordova/plugin-mediascanner#readme"
+  "cordova": {
+    "id": "fairmanager-cordova-plugin-mediascanner",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "4.12.0",
+    "eslint-plugin-promise": "3.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
