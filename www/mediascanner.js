@@ -23,7 +23,7 @@ SOFTWARE.
  */
 
 /**
- * MediaScannerPlugin.js
+ * MediaScanner.js
  *
  * @author Bruno E. Grossi <bruno@grossi.com.br>
  */
@@ -34,7 +34,7 @@ module.exports = {
         }, function(error) {
             errorCallback && errorCallback(error);
         },
-        "MediaScannerPlugin",
+        "MediaScanner",
         "scanFile",
         [fileUri]);
     }

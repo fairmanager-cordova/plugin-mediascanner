@@ -1,4 +1,4 @@
-package br.com.brunogrossi.MediaScannerPlugin;
+package br.com.brunogrossi.MediaScanner;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -37,12 +37,12 @@ SOFTWARE.
 
 
 /**
- * MediaScannerPlugin.java
+ * MediaScanner.java
  *
  * @author Bruno E. Grossi <bruno@grossi.com.br>
  */
-public class MediaScannerPlugin extends CordovaPlugin {
-    private static final String TAG = "MediaScannerPlugin";
+public class MediaScanner extends CordovaPlugin {
+    private static final String TAG = "MediaScanner";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {

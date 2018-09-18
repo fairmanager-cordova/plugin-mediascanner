@@ -1,0 +1,44 @@
+{
+	"patch": {
+		"tasks": [
+			{
+				"name": "Bump version",
+				"command": "bump",
+				"args": [
+					"--cordova",
+					"--patch",
+					"--no-commit"
+				],
+				"comment": "[TASK] Bump version"
+			}
+		]
+	},
+	"minor": {
+		"tasks": [
+			{
+				"name": "Bump version",
+				"command": "bump",
+				"args": [
+					"--cordova",
+					"--minor",
+					"--no-commit"
+				],
+				"comment": "[TASK] Bump version"
+			}
+		]
+	},
+	"major": {
+		"tasks": [
+			{
+				"name": "Bump version",
+				"command": "bump",
+				"args": [
+					"--cordova",
+					"--major",
+					"--no-commit"
+				],
+				"comment": "[TASK] Bump version"
+			}
+		]
+	}
+}
