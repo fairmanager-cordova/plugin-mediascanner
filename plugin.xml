@@ -1,11 +1,11 @@
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    id="br.com.brunogrossi.MediaScannerPlugin"
-    version="0.1.3">
-
-    <name>Media Scanner Plugin</name>
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" id="fairmanager-cordova-plugin-mediascanner" version="1.0.0">
+    <name>MediaScanner</name>
     <description>MediaScanner should be called to add a downloaded image to Android Gallery.</description>
+    <license>MIT</license>
+    <repo>https://github.com/fairmanager-cordova/plugin-mediascanner</repo>
+    <issue>https://github.com/fairmanager-cordova/plugin-mediascanner/issues</issue>
     <author>Bruno E. Grossi - brunogrossi.com.br</author>
     <keywords>android,image,photo library,gallery,mediascanner</keywords>
 
@@ -13,23 +13,27 @@
         <engine name="cordova" version=">=3.0.0" />
     </engine>
 
-    <license>MIT</license>
-
-    <js-module src="www/MediaScannerPlugin.js" name="MediaScannerPlugin">
-        <clobbers target="cordova.plugins.MediaScannerPlugin" />
+    <js-module src="www/MediaScanner.js" name="MediaScanner">
+        <clobbers target="cordova.plugins.mediaScanner" />
     </js-module>
 
-    <!-- android -->
-    <platform name="android">
-
-        <config-file target="res/xml/config.xml" parent="/*">
-          <feature name="MediaScannerPlugin" >
-            <param name="android-package" value="br.com.brunogrossi.MediaScannerPlugin.MediaScannerPlugin"/>
-          </feature>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MediaScanner">
+                <param name="ios-package" value="CDVMediaScanner"/>
+            </feature>
         </config-file>
 
-        <source-file src="src/android/MediaScannerPlugin.java"
-            target-dir="src/br/com/brunogrossi/MediaScannerPlugin" />
+        <source-file src="src/ios/MediaScanner.mm" />
+    </platform>
 
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MediaScanner">
+                <param name="android-package" value="br.com.brunogrossi.MediaScanner.MediaScanner"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/MediaScanner.java" target-dir="src/br/com/brunogrossi/MediaScanner" />
     </platform>
 </plugin>

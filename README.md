@@ -1,5 +1,5 @@
-# MediaScannerPlugin
-Cordova/Phonegap plugin to call MediaScannerPlugin
+# MediaScanner
+Cordova/Phonegap plugin to call MediaScanner
 
 MediaScanner should be called to add a downloaded image to Android Gallery.
 
@@ -8,14 +8,14 @@ Installation
 
 ### For Cordova 3.0.x:
 
-To add this plugin just type: `cordova plugin add https://github.com/begrossi/MediaScannerPlugin.git` or
+To add this plugin just type: `cordova plugin add https://github.com/begrossi/MediaScanner.git` or
 `cordova plugin add cordova-plugin-mediascanner` (using npmjs [repository](https://www.npmjs.com/package/cordova-plugin-mediascanner)).
 
 
 Usage:
 ------
 
-Call the `cordova.plugins.MediaScannerPlugin.scanFile(fileUri, successCallback, errorCallback)` method after download.
+Call the `cordova.plugins.MediaScanner.scanFile(fileUri, successCallback, errorCallback)` method after download.
 
 
 References:
