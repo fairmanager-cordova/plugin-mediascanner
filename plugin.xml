@@ -38,6 +38,7 @@
 			</feature>
 		</config-file>
 
+		<header-file src="src/ios/CDVMediaScanner.h" />
 		<source-file src="src/ios/CDVMediaScanner.m" />
 	</platform>
 </plugin>
