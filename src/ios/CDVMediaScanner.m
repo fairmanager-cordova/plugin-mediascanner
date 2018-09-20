@@ -1,5 +1,4 @@
 #import "CDVMediaScanner.h"
-#import <Photos/Photos.h>
 
 @implementation CDVMediaScanner
 
@@ -60,3 +59,5 @@
         }
     }];
 }
+
+@end
