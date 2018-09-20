@@ -1,4 +1,7 @@
+#import "CDVMediaScanner.h"
 #import <Photos/Photos.h>
+
+@implementation CDVMediaScanner
 
 - (void)insertImage:(UIImage *)image intoAlbumNamed:(NSString *)albumName {
     //Fetch a collection in the photos library that has the title "albumNmame"
