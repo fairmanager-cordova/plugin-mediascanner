@@ -2,7 +2,12 @@
 
 @implementation CDVMediaScanner
 
-- (void)insertImage:(NSString*)imagePath intoAlbumNamed:(NSString*)albumName {
+- (void)scanFile:(NSString*)imagePath {
+	UIImage* image = [UIImage imageWithContentsOfFile:imagePath];
+	return [self insertImage:image intoAlbumNamed: albumName];
+}
+
+- (void)insertImagePath:(NSString*)imagePath intoAlbumNamed:(NSString*)albumName {
 	UIImage* image = [UIImage imageWithContentsOfFile:imagePath];
 	return [self insertImage:image intoAlbumNamed: albumName];
 }

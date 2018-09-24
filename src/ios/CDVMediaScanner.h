@@ -3,7 +3,7 @@
 
 @interface CDVMediaScanner : CDVPlugin {}
 
-- (void)				insertImage:						(NSString*)				imagePath
+- (void)				insertImagePath:					(NSString*)				imagePath
 						intoAlbumNamed:						(NSString*)				albumName;
 
 - (void)				insertImage:						(UIImage*)				image
