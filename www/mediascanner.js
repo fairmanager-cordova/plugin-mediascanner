@@ -28,14 +28,29 @@ SOFTWARE.
  * @author Bruno E. Grossi <bruno@grossi.com.br>
  */
 module.exports = {
-    scanFile: function(fileUri, successCallback, errorCallback) {
-        cordova.exec(function() {
-            successCallback && successCallback();
-        }, function(error) {
-            errorCallback && errorCallback(error);
-        },
-        "MediaScanner",
-        "scanFile",
-        [fileUri]);
-    }
+	scanFile : function( fileUri, successCallback, errorCallback ) {
+		cordova.exec( function() {
+			successCallback && successCallback();
+		}, function( error ) {
+			errorCallback && errorCallback( error );
+		},
+			"MediaScanner",
+			"scanFile",
+			[ fileUri ] );
+	},
+
+	scanFileIntoAlbum : function( fileUri, albumName, successCallback, errorCallback ) {
+		if( typeof albumName !== "string" ) {
+			return module.exports.scanFile( fileUri, successCallback, errorCallback );
+		}
+
+		cordova.exec( function() {
+			successCallback && successCallback();
+		}, function( error ) {
+			errorCallback && errorCallback( error );
+		},
+			"MediaScanner",
+			"insertImagePath",
+			[ fileUri, albumName ] );
+	}
 };

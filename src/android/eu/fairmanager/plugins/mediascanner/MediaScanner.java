@@ -47,17 +47,17 @@ public class MediaScanner extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         try {
-            if (action.equals("scanFile")) {
+            if (action.equals("scanFile") || action.equals("insertImagePath")) {
                 String fileUri = args.optString(0);
                 if(fileUri!=null && !fileUri.equals("")) {
                     Uri contentUri = Uri.parse(fileUri);
-                    
+
                     Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                     mediaScanIntent.setData(contentUri);
                     this.cordova.getActivity().sendBroadcast(mediaScanIntent);
-                    
+
                     callbackContext.success();
-        
+
                     return true;
                 } else {
                     Log.w(TAG, "No action param provided: "+action);
