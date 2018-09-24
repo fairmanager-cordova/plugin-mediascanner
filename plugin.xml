@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<plugin id="fairmanager-cordova-plugin-mediascanner" version="1.1.5"
+<plugin id="fairmanager-cordova-plugin-mediascanner" version="1.1.6"
 	xmlns="http://apache.org/cordova/ns/plugins/1.0">
 
 	<name>MediaScanner Plugin</name>
@@ -24,7 +24,7 @@
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="MediaScanner">
-				<param name="android-package" value="eu.fairmanager.plugins.MediaScanner"/>
+				<param name="android-package" value="eu.fairmanager.plugins.mediascanner.MediaScanner"/>
 			</feature>
 		</config-file>
 
