@@ -4,7 +4,7 @@
 
 - (void)scanFile:(NSString*)imagePath {
 	UIImage* image = [UIImage imageWithContentsOfFile:imagePath];
-	return [self insertImage:image intoAlbumNamed: albumName];
+	return [self insertImage:image intoAlbumNamed: @"Images"];
 }
 
 - (void)insertImagePath:(NSString*)imagePath intoAlbumNamed:(NSString*)albumName {
