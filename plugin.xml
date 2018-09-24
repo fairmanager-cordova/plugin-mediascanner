@@ -24,7 +24,7 @@
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="MediaScanner">
-				<param name="android-package" value="eu.fairmanager.plugins.MediaScanner"/>
+				<param name="android-package" value="eu.fairmanager.plugins.mediascanner.MediaScanner"/>
 			</feature>
 		</config-file>
 
