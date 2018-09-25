@@ -42,36 +42,36 @@ SOFTWARE.
  * @author Bruno E. Grossi <bruno@grossi.com.br>
  */
 public class MediaScanner extends CordovaPlugin {
-    private static final String TAG = "MediaScanner";
+	private static final String TAG = "MediaScanner";
 
-    @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        try {
-            if (action.equals("scanFile") || action.equals("insertImagePath")) {
-                String fileUri = args.optString(0);
-                if(fileUri!=null && !fileUri.equals("")) {
-                    Uri contentUri = Uri.parse(fileUri);
+	@Override
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		try {
+			if (action.equals("scanFile") || action.equals("insertImagePath")) {
+				String fileUri = args.optString(0);
+				if (fileUri != null && !fileUri.equals("")) {
+					Uri contentUri = Uri.parse(fileUri);
 
-                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                    mediaScanIntent.setData(contentUri);
-                    this.cordova.getActivity().sendBroadcast(mediaScanIntent);
+					Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+					mediaScanIntent.setData(contentUri);
+					this.cordova.getActivity().sendBroadcast(mediaScanIntent);
 
-                    callbackContext.success();
+					callbackContext.success();
 
-                    return true;
-                } else {
-                    Log.w(TAG, "No action param provided: "+action);
-                    callbackContext.error("No action param provided: "+action);
-                    return false;
-                }
-            } else {
-                Log.w(TAG, "Wrong action was provided: "+action);
-                return false;
-            }
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            callbackContext.error(e.getMessage());
-            return false;
-        }
-    }
+					return true;
+				} else {
+					Log.w(TAG, "No action param provided: " + action);
+					callbackContext.error("No action param provided: " + action);
+					return false;
+				}
+			} else {
+				Log.w(TAG, "Wrong action was provided: " + action);
+				return false;
+			}
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+			callbackContext.error(e.getMessage());
+			return false;
+		}
+	}
 }

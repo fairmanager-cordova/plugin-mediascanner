@@ -1,6 +1,6 @@
-#import "CDVMediaScanner.h"
+#import "FMMediaScanner.h"
 
-@implementation CDVMediaScanner
+@implementation FMMediaScanner
 
 - (void)scanFile:(NSString*)imagePath {
 	UIImage* image = [UIImage imageWithContentsOfFile:imagePath];

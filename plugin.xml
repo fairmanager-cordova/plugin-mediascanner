@@ -34,11 +34,11 @@
 	<platform name="ios">
 		<config-file target="config.xml" parent="/*">
 			<feature name="MediaScanner">
-				<param name="ios-package" value="CDVMediaScanner"/>
+				<param name="ios-package" value="FMMediaScanner"/>
 			</feature>
 		</config-file>
 
-		<header-file src="src/ios/CDVMediaScanner.h" />
-		<source-file src="src/ios/CDVMediaScanner.m" />
+		<header-file src="src/ios/FMMediaScanner.h" />
+		<source-file src="src/ios/FMMediaScanner.m" />
 	</platform>
 </plugin>

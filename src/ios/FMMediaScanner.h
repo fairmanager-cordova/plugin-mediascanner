@@ -1,7 +1,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <Photos/Photos.h>
 
-@interface CDVMediaScanner : CDVPlugin {}
+@interface FMMediaScanner : CDVPlugin {}
 
 - (void)				insertImagePath:					(NSString*)				imagePath
 						intoAlbumNamed:						(NSString*)				albumName;
