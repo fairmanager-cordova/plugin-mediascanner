@@ -3,6 +3,8 @@
 
 @interface FMMediaScanner : CDVPlugin {}
 
+- (void)scanFileIntoAlbum:(CDVInvokedUrlCommand*)command;
+
 - (void)				insertImagePath:					(NSString*)				imagePath
 						intoAlbumNamed:						(NSString*)				albumName;
 

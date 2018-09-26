@@ -47,7 +47,7 @@ public class MediaScanner extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
-			if (action.equals("scanFile") || action.equals("insertImagePath")) {
+			if (action.equals("scanFile") || action.equals("scanFileIntoAlbum")) {
 				String fileUri = args.optString(0);
 				if (fileUri != null && !fileUri.equals("")) {
 					Uri contentUri = Uri.parse(fileUri);
