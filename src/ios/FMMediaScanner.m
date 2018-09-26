@@ -2,13 +2,12 @@
 
 @implementation FMMediaScanner
 
-- (void)scan:(CDVInvokedUrlCommand*)command {
+- (void)scanFileIntoAlbum:(CDVInvokedUrlCommand*)command {
 	[self.commandDelegate runInBackground:^{
 		NSString* fileUri   = [command.arguments objectAtIndex:0];
 		NSString* albumName = [command.arguments objectAtIndex:1];
 
 		[self insertImagePath:fileUri intoAlbumNamed:albumName];
-		[pasteboard setValue:text forPasteboardType:@"public.text"];
 
 		CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
