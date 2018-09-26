@@ -27,30 +27,42 @@ SOFTWARE.
  *
  * @author Bruno E. Grossi <bruno@grossi.com.br>
  */
+
+const cordova = require( "cordova" );
+
 module.exports = {
-	scanFile : function( fileUri, successCallback, errorCallback ) {
-		cordova.exec( function() {
-			successCallback && successCallback();
-		}, function( error ) {
-			errorCallback && errorCallback( error );
-		},
-			"MediaScanner",
-			"scanFile",
-			[ fileUri ] );
+	scanFile : ( fileUri, successCallback, errorCallback ) => {
+		cordova.exec( () => {
+			if( !successCallback ) {
+				return;
+			}
+
+			successCallback();
+		}, error => {
+			if( !errorCallback ) {
+				return;
+			}
+			errorCallback( error );
+		}, "MediaScanner", "scanFile", [ fileUri ] );
 	},
 
-	scanFileIntoAlbum : function( fileUri, albumName, successCallback, errorCallback ) {
+	scanFileIntoAlbum : ( fileUri, albumName, successCallback, errorCallback ) => {
 		if( typeof albumName !== "string" ) {
 			return module.exports.scanFile( fileUri, successCallback, errorCallback );
 		}
 
-		cordova.exec( function() {
-			successCallback && successCallback();
-		}, function( error ) {
-			errorCallback && errorCallback( error );
-		},
-			"MediaScanner",
-			"insertImagePath",
-			[ fileUri, albumName ] );
+		cordova.exec( () => {
+			if( !successCallback ) {
+				return;
+			}
+			successCallback();
+		}, error => {
+			if( !errorCallback ) {
+				return;
+			}
+			errorCallback( error );
+		}, "MediaScanner", "scanFileIntoAlbum", [ fileUri, albumName ] );
+
+		return null;
 	}
 };
