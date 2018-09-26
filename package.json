@@ -1,6 +1,6 @@
 {
   "name": "fairmanager-cordova-plugin-mediascanner",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "MediaScanner should be called to add a downloaded image to Android Gallery.",
   "license": "MIT",
   "author": {
